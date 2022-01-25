@@ -297,38 +297,26 @@
   font-size: 1.8rem;
 }
 
-.list {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  gap: 1.6rem;
-}
-
-.list-icon {
-  width: 3rem;
-  height: 3rem;
-  color: #e67e22;
-}
-
-.list-item {
-  display: flex;
-  font-size: 1.8rem;
-  align-items: center;
-  gap: 1.6rem;
-}
-
 /****************************/
 /* TESTIMONIALS SECTION */
 /****************************/
 
 .section-testimonials {
-  padding: 9.6rem 0;
+  display: grid;
+  grid-template-columns: 55fr 45fr;
+  background-color: #fdf2e9;
+  align-items: center;
+}
+
+.testimonials-container {
+  padding: 9.6rem;
 }
 
 .testimonials {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4.8rem;
+  row-gap: 4.8rem;
+  column-gap: 8rem;
 }
 
 .testimonial-img {
@@ -345,5 +333,34 @@
 
 .testimonial-name {
   font-size: 1.6rem;
-  color: #777;
+  color: #6f6f6f;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+
+.gallery-item {
+  overflow: hidden;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  transition: all 0.4s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+/****************************/
+/* PRICING SECTION */
+/****************************/
+
+.section-pricing {
+  padding: 9.6rem 0;
 }
