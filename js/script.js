@@ -20,7 +20,7 @@ btnNavEl.addEventListener("click", function () {
 // Smooth scrolling animation
 
 //click event on anchor elements using event delegation
-window.addEventListener("click", function (e) {
+document.body.addEventListener("click", function (e) {
   e.preventDefault();
   if (
     !e.target.getAttribute("href") &&
@@ -55,6 +55,33 @@ window.addEventListener("click", function (e) {
     }
   }
 });
+
+///////////////////////////////////////////////////////////
+// Sticky Navigation
+
+const sectionHeroEl = document.querySelector(".section-hero");
+
+const obs = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    if (!ent.isIntersecting) {
+      console.log(ent);
+      document.body.classList.add("sticky");
+    } else {
+      document.body.classList.remove("sticky");
+    }
+  },
+  {
+    //options object the root is where this element should be appearing or not,
+    //setting it to null means we will observe it in the viewport
+    root: null,
+    threshold: 0,
+    rootMargin: "-80px",
+  }
+);
+
+//using the observer to observe a certain element
+obs.observe(sectionHeroEl);
 
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
